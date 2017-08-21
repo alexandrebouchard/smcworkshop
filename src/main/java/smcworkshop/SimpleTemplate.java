@@ -37,7 +37,7 @@ public class SimpleTemplate implements Runnable
     for (int i = 0; i < nLatexRuns; i++)
       pdflatexOut = Command.byName("pdflatex").withArgs(texFile.getName()).ranIn(texFile.getParentFile()).callWithInputStreamContents("x\nx\nx\nx\nx\nx\n");
     System.out.println("Latex output (last run)\n" + pdflatexOut);
-    Command.call(Command.byPath(new File("/usr/bin/open")).withArgs(Results.getFileInResultFolder(outFile.replaceAll("tex$", "pdf")).getAbsolutePath()));
+    //Command.call(Command.byPath(new File("/usr/bin/open")).withArgs(Results.getFileInResultFolder(outFile.replaceAll("tex$", "pdf")).getAbsolutePath()));
   }
   
   public String authorKey(Map<String, String> line)
