@@ -1,0 +1,29 @@
+Distributed algorithms have become increasingly significant in recent
+years propelled by fast technological developments in parallel
+computing. For sequential Monte Carlo methods, the re-sampling
+step remains the main difficulty in attempting to parallelize them. We
+consider a recent algorithm, the so-called $\alpha$SMC [2], which is an
+attempt at this. Interactions between particles in this algorithm are
+controlled by a sequence of “$\alpha$” matrices. Our goal is to minimize
+interactions while still leading to stable algorithms. We prove that
+under standard assumptions the stability properties of the algorithm
+can be ensured by choosing well-connected, yet sparse, graphs. In
+particular, choosing Ramanujan graphs [1] lead to stable-in-time
+algorithms; and more generally, so do expander graphs. We next
+prove a central limit theorem when interactions are randomly chosen
+and we also prove that the asymptotic normalized variance of the
+filtering estimates produced by the $\alpha$SMC with random interactions is
+stable as long as there is a certain minimum level of interaction. An
+offshoot of this is that the $\alpha$SMC algorithm with random interaction is
+asymptotically equivalent to the bootstrap particle filter as long as the level of interaction increases to infinity with the
+number of particles, even if it is at a very slow rate.
+
+Joint work with Alexandre Thiery.
+\\
+\\
+\noindent [1] Alexander Lubotzky, Ralph Phillips, and Peter Sarnak. Ramanujan
+graphs. Combinatorica, 8(3):261–277, 1988.
+
+\noindent [2] Nick Whiteley, Anthony Lee, and Kari Heine. On the role of
+interaction in sequential Monte Carlo algorithms. Bernoulli, 22(1):
+494–529, 2016.

@@ -1,0 +1,37 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{url}
+\newcommand{\postertitle}[1]{{\Large\bf #1}\\[12pt]}
+\newcommand{\authors}[1]{\emph{#1}\\}
+\newcommand{\affiliations}[1]{{#1}\\}
+\newcommand{\contacts}[1]{{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\vspace*{0.5cm}
+%
+\postertitle{Global consensus Monte Carlo}
+%
+\authors{Lewis Rendell$^\star$, Adam Johansen, Anthony Lee and Nick Whiteley} % please mark the name of the person(s) presenting the poster with a star
+% 
+\affiliations{University of Warwick and University of Bristol}
+%
+\contacts{\url{http://www.warwick.ac.uk/ljrendell}} % URL or email address of contact person
+%
+\vspace*{0.3cm}
+\end{center}
+
+%%%%%%%%%%   Type your abstract below
+For problems involving large data sets, it is often practical or necessary to distribute the data across multiple processors. Consider a target probability density function expressed as a product of terms, each being the contribution of one such subset of the data. We introduce an instrumental hierarchical model, associating a parameter vector with each subset; these parameter vectors are conditionally independent when conditioned on a top-level parameter. This permits the construction of a Gibbs sampler that yields an approximation of the target density as a marginal of its invariant distribution. Specifying the conditional distribution of the artificial parameter vectors allows the trade-off between computational tractability and fidelity to the original model to be controlled, which may be achieved using a sequential Monte Carlo approach. In contrast to similar such algorithms, this approach requires no assumptions of approximate Gaussianity; we present promising empirical results in such cases, and initial investigations into the algorithm's theoretical properties.
+
+
+%%%%%%%%%%%   References
+%If you have references, you can produce a .bbl file using bibtex
+%and copy/paste thebibliography here
+
+
+
+\end{document}

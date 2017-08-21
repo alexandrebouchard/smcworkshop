@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{url}
+\newcommand{\postertitle}[1]{{\Large\bf #1}\\[12pt]}
+\newcommand{\authors}[1]{\emph{#1}\\}
+\newcommand{\affiliations}[1]{{#1}\\}
+\newcommand{\contacts}[1]{{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\vspace*{0.5cm}
+%
+\postertitle{Multivariate Output Analysis for Markov Chain Monte Carlo}
+%
+\authors{Dootika Vats$^\star$, James Flegal, Galin Jones} % please mark the name of the person(s) presenting the poster with a star
+% 
+\affiliations{Department of Statistics, University of Warwick}
+%
+\contacts{\url{http://warwick.ac.uk/dvats}} % URL or email address of contact person
+%
+\vspace*{0.3cm}
+\end{center}
+
+%%%%%%%%%%   Type your abstract below
+Markov chain Monte Carlo (MCMC) is a method of producing a correlated sample in order to estimate expectations with respect to a target distribution. A fundamental question is when should sampling stop so that we have good estimates of the desired quantities? The key to answering these questions lies in assessing the Monte Carlo error through a multivariate Markov chain central limit theorem.  However, the multivariate nature of this Monte Carlo error has been ignored in the MCMC literature.  I will give conditions  for consistently estimating the asymptotic covariance matrix.  Based on these theoretical results I present  a relative standard deviation fixed volume sequential stopping rule for deciding when to terminate the simulation.  This stopping rule is then connected to the notion of effective sample size, giving an intuitive, and theoretically justified approach to implementing the proposed method.  The finite sample properties of the proposed method are then demonstrated in examples. The results presented in this talk are based on joint work with James Flegal (UC, Riverside) and Galin Jones (U of Minnesota).
+
+
+%%%%%%%%%%%   References
+%If you have references, you can produce a .bbl file using bibtex
+%and copy/paste thebibliography here
+
+% \begin{thebibliography}{1}	
+% 	\bibitem{label}
+% 	A.~Anderson 
+% 	\newblock Novel theory for methods
+% 	\newblock {\em Journal of Theory and Methods}, 1(2):1--12, 2017.	
+% \end{thebibliography}
+
+
+\end{document}

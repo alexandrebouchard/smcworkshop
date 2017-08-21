@@ -1,0 +1,19 @@
+Bayesian inference provides a principled and well-defined approach
+to the integration of data into an a priori known distribution. The
+posterior distribution, however, is known only point-wise (possibly
+with an intractable likelihood) and up to a normalizing constant.
+Monte Carlo methods such as sequential Monte Carlo (SMC) samplers
+have been designed to sample such distributions. In the case that a
+complex and intractable model appears inside the statistical model,
+an additional approximation error is incurred from its necessarily
+finite resolution approximation. Recently, the multilevel Monte Carlo
+(MLMC) framework has been extended to such algorithms, so that
+approximation error can be optimally balanced with statistical
+sampling error, and ultimately the Bayesian inverse problem can be
+solved for the same asymptotic cost as solving the deterministic
+forward problem. This talk will concern the recent development of
+multilevel SMC (MLSMC) samplers and the resulting estimators for
+standard quantities of interest as well as normalizing constants.
+MLMC data assimilation methods, which combine dynamical systems
+with data in an online fashion, will also be presented, including ML
+particle filters and ensemble Kalman filters.

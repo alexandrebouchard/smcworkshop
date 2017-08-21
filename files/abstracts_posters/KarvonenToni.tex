@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{url}
+\newcommand{\postertitle}[1]{{\Large\bf #1}\\[12pt]}
+\newcommand{\authors}[1]{\emph{#1}\\}
+\newcommand{\affiliations}[1]{{#1}\\}
+\newcommand{\contacts}[1]{{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\vspace*{0.5cm}
+%
+\postertitle{Backward simulation smoothing for Gaussian process state-space models}
+%
+\authors{Roland Hostettler, Toni Karvonen*, Filip Tronarp, and Simo S\"arkk\"a}
+% 
+\affiliations{Department of Electrical Engineering and Automation \\ Aalto University, Espoo, Finland}
+%
+\contacts{\url{toni.karvonen@aalto.fi}} % URL or email address of contact person
+%
+\vspace*{0.3cm}
+\end{center}
+
+%%%%%%%%%%   Type your abstract below
+\noindent Gaussian process state-space models (GP-SSMs) are a class of nonlinear, nonparametric Bayesian state-space models where the state transition and measurement functions are modeled as Gaussian processes. This type of models has successfully been employed for modeling dynamic systems in different problems, for example in modeling for control or robotics~\cite{DeisenrothTurnerHuber2012,FrigolaLindstenSchon2013}. However, an inherent drawback is that GP-SSMs are non-Markovian due to the dependency of both the state transition density and the likelihood on the complete past trajectory. This can be alleviated by using approximation techniques such as sparse GPs~\cite{QuinoneroCandelaRasmussen2005} or Hilbert space approximations~\cite{SvenssonSolinSarkka2016}.
+
+Nevertheless, an approach suitable for inference that does not require approximations to the system per se are sequential Monte Carlo methods which can readily handle non-Markovian state-space models~\cite{FrigolaLindstenSchon2013,LindstenSchonJordan2013}. Hence, in this work, we develop a (naïve) backward simulation smoother for GP-SSMs. The proposed smoothing solution is capable of generating non-degenerate state trajectories and generally lowering the estimation error (as opposed to the more straight-forward joint filtering solution). Furthermore, it is also an important building block in maximum likelihood system identification~\cite{FrigolaChenRasmussen2014,DeisenrothShakir2012}. We demonstrate the proposed smoother's applicability in an indoor localization application and discuss some practical issues and possible future research directions.
+
+%%%%%%%%%%%   References
+%If you have references, you can produce a .bbl file using bibtex
+%and copy/paste thebibliography here
+\begin{thebibliography}{1}	
+  \bibitem{DeisenrothTurnerHuber2012}
+  M.~P. Deisenroth, R.~D. Turner, M.~F. Huber, U.~D. Hanebeck, and C.~E.
+    Rasmussen, ``Robust filtering and smoothing with {Gaussian} processes,''
+    \emph{IEEE Transactions on Automatic Control}, vol.~57, no.~7, pp.
+    1865--1871, July 2012.
+
+  \bibitem{FrigolaLindstenSchon2013}
+  R.~Frigola, F.~Lindsten, T.~B. Sch\"on, and C.~E. Rasmussen, ``{Bayesian}
+    inference and learning in {Gaussian} process state-space models with particle
+    {MCMC},'' in \emph{Advances in Neural Information Processing Systems 26},
+    2013, pp. 3156--3164.
+
+  \bibitem{QuinoneroCandelaRasmussen2005}
+  J.~Quiñonero-Candela and C.~E. Rasmussen, ``A unifying view of sparse
+    approximate {Gaussian} process regression,'' \emph{Journal of Machine
+    Learning Research}, vol.~6, pp. 1939--1959, 2005.
+
+  \bibitem{SvenssonSolinSarkka2016}
+  A.~Svensson, A.~Solin, S.~S\"arkk\"a, and T.~Sch\"on, ``Computationally efficient
+    {Bayesian} learning of {Gaussian} process state space models,'' in \emph{19th
+    International Conference on Artificial Intelligence and Statistics
+    (AISTATS)}, vol.~51, Cadiz, Spain, May 2016, pp. 213--221.
+
+  \bibitem{LindstenSchonJordan2013}
+  F.~Lindsten, T.~B. Sch\"on, and M.~I. Jordan, ``Bayesian semiparametric {Wiener}
+    system identification,'' \emph{Automatica}, vol.~49, no.~7, pp. 2053--2063,
+    2013.
+
+  \bibitem{FrigolaChenRasmussen2014}
+  R.~Frigola, Y.~Chen, and C.~E. Rasmussen, ``Variational {Gaussian} process
+    state-space models,'' in \emph{Advances in Neural Information Processing
+    Systems 27}, 2014, pp. 3680--3688.
+
+  \bibitem{DeisenrothShakir2012}
+  M.~P. Deisenroth and S.~Mohamed, ``Expectation propagation in {Gaussian}
+    process dynamical systems,'' in \emph{Advances in Neural Information
+    Processing Systems 25}, 2012, pp. 2609--2617.
+\end{thebibliography}
+
+
+\end{document}

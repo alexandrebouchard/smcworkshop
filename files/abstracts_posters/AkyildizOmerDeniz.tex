@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{url}
+\newcommand{\postertitle}[1]{{\Large\bf #1}\\[12pt]}
+\newcommand{\authors}[1]{\emph{#1}\\}
+\newcommand{\affiliations}[1]{{#1}\\}
+\newcommand{\contacts}[1]{{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\vspace*{0.5cm}
+%
+\postertitle{Simple Nudging Schemes for Particle Filtering}
+%
+\authors{\"Omer Deniz Aky{\i}ld{\i}z$^\star$ and Joaqu\'in M\'iguez} % please mark the name of the person(s) presenting the poster with a star
+% 
+\affiliations{Department of Signal Theory and Communications \\ Universidad Carlos III de Madrid}
+%
+\contacts{\url{oakyildi@pa.uc3m.es, jmiguez@ing.uc3m.es}} % URL or email address of contact person
+%
+\vspace*{0.3cm}
+\end{center}
+
+%%%%%%%%%%   Type your abstract below
+We investigate a new sampling scheme to improve the performance of particle filters in scenarios where either 
+(a) there is a significant mismatch between the assumed model dynamics and the actual system producing the available observations, or (b) the system of interest is high dimensional and the posterior probability tends to concentrate in relatively small regions of the state space. The proposed scheme generates nudged particles, i.e., subsets of particles which are deterministically pushed towards specific areas of the state space where the likelihood is expected to be high, an operation known as \textit{nudging} in the geophysics literature. This is a device that can be plugged into any particle filtering scheme, as it does not involve modifications in the classical algorithmic steps of sampling, computation of weights, and resampling. Since the particles are modified, but the importance weights do not account for this modification, the use of nudging leads to additional bias in the resulting estimators. However, we prove analytically that particle filters equipped with the proposed device still attain asymptotic convergence (with the same error rates as conventional particle methods) as long as the nudged particles are generated according to simple and easy-to-implement rules. Finally, we show numerical results that illustrate the improvement in performance and robustness that can be attained using the proposed scheme. In particular, we show the results of computer experiments involving a misspecified chaotic model and a large dimensional chaotic model, both of them borrowed from the geophysics literature.
+
+
+%%%%%%%%%%%   References
+%If you have references, you can produce a .bbl file using bibtex
+%and copy/paste thebibliography here
+%\begin{thebibliography}{1}	
+%	\bibitem{label}
+%	A.~Anderson 
+%	\newblock Novel theory for methods
+%	\newblock {\em Journal of Theory and Methods}, 1(2):1--12, 2017.	
+%\end{thebibliography}
+
+
+\end{document}

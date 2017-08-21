@@ -1,0 +1,23 @@
+We present an ofine, iterated particle filter to facilitate statistical
+inference in general state space hidden Markov models. Given a
+model and a sequence of observations, the associated marginal
+likelihood $L$ is central to likelihood-based inference for unknown
+statistical parameters. We define a class of ``twisted'' models: each
+member is specified by a sequence of positive functions $\psi$ and
+has an associated $\psi$-auxiliary particle filter that provides
+unbiased estimates of $L$. We identify a sequence $\psi^\star$ that is
+optimal in the
+sense that the $\psi^\star$-auxiliary particle filter's estimate of $L$ has
+zero variance. In practical applications, $\psi^\star$ is unknown so the $\psi^\star$-auxiliary particle filter cannot straightforwardly be
+implemented. We use an iterative scheme to approximate $\psi^\star$, and
+demonstrate empirically that the resulting iterated auxiliary particle
+filter significantly outperforms the bootstrap particle filter in
+challenging settings. This method is particularly well suited to
+approximate simulation of diffusion bridges as is shown by the
+empirical study.
+
+\noindent Ref: P. Guarniero, A. M. Johansen and A. Lee. The Iterated Auxiliary
+Particle Filter. To appear in /Journal of the American Statistical
+Association/ 
+
+\noindent [http://dx.doi.org/10.1080/01621459.2016.1222291]

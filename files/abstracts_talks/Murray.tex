@@ -1,0 +1,13 @@
+We introduce a dynamic mechanism for the solution of analytically-tractable substructure in probabilistic programs. For inference with
+Sequential Monte Carlo, it automatically yields improvements such as
+locally-optimal proposals and Rao-Blackwellization. It works by
+maintaining a directed graph alongside the running program,
+evolving dynamically as the program triggers operations upon it.
+Nodes of the graph represent random variables, and edges the
+analytically-tractable relationships between them (e.g. conjugate
+priors and affine transformations). Each random variable is held in the
+graph for as long as possible, and is sampled only when used by the
+program in a context that cannot be resolved analytically. This allows
+it to be conditioned on as many observations as possible before sampling. The approach has been implemented in a new probabilistic
+programming language called Birch, in which several examples will be
+given.

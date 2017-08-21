@@ -1,0 +1,55 @@
+Sequential Monte Carlo methods (also called particle filters) provide a
+natural computational approach for state and parameter estimation
+problems in the context of nonlinear evolution equations. Yet the
+curse of dimensionality prevents particle filters to be employed for
+systems with a high-dimensional state space [2]. One option to
+overcome this limitation is to use localization techniques. However,
+due to the random resampling steps of standard particle filters,
+localization cannot be applied in a straightforward manner. The
+recently proposed ensemble transform particle filter (ETPF) [4]
+provides a solution to this problem and replaces the resampling step
+of a standard particle filter by a linear transformation. Further, this
+linear transformation of the particles allows to design a hybrid
+approach that couples particle filters with ensemble Kalman filters
+[3]. However, the transformation step is computationally expensive
+and leads to an underestimation of the ensemble spread for small
+and moderate ensemble sizes.
+These shortcomings have recently been addressed in [1] by
+developing second-order accurate extensions of the ETPF. These
+improvements allow one in particular to replace the exact solution of
+a linear transport problem by its Sinkhorn approximation. It is also
+demonstrated that the nonlinear ensemble transform filter (NETF) [6,
+5] arises as a special case of our general framework. Numerical
+results for the Lorenz-63 and Lorenz-96 models demonstrate the
+effectiveness of the proposed modified particle filters.
+
+Joint work with Sebastian Reich and Walter Acevedo.
+\\
+\\
+\noindent References
+\\
+\\
+\noindent [1] W. Acevedo, J. de Wiljes, and S. Reich, A second-order accurate
+ensemble transform particle filter, accepted at SIAM J. Sci Comp,
+https://arxiv.org/abs/1608.08179 (2017).
+
+\noindent [2] T. Bengtsson, P. Bickel, and B. Li, Curse of dimensionality
+revisited: Collapse of the particle filter in very large scale systems, in
+IMS Lecture Notes - Monograph Series in Probability and Statistics:
+Essays in Honor of David F. Freedman, vol. 2, Institute of
+Mathematical Sciences, 2008, pp. 316–334.
+
+\noindent [3] N. Chustagulprom, S. Reich, and M. Reinhardt, A hybrid ensemble
+transform filter for nonlinear and spatially extended dynamical
+systems, SIAM/ASA J. Uncertainty Quantification, 4 (2016), pp. 592–608.
+
+\noindent [4] S. Reich, A nonparametric ensemble transform method for
+Bayesian inference, SIAM J. Sci. Comput., 35 (2013), pp. A2013–
+A2024.
+
+\noindent [5] J. Tödter and B. Ahrens, A second-order exact ensemble square
+root filter for nonlinear data assimilation, Mon. Wea. Rev., 143
+(2015), pp. 1347–1367.
+
+\noindent [6] X. Xiong, I. Navon, and B. Uzungoglu, A note on the particle filter
+with posterior Gaussian resampling, Tellus, 85A (2006), pp. 456–460.

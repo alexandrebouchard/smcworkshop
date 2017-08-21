@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{url}
+\newcommand{\postertitle}[1]{{\Large\bf #1}\\[12pt]}
+\newcommand{\authors}[1]{\emph{#1}\\}
+\newcommand{\affiliations}[1]{{#1}\\}
+\newcommand{\contacts}[1]{{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\vspace*{0.5cm}
+%
+\postertitle{Sequential Monte Carlo for Dynamic Latent Space Networks}
+%
+\authors{Kathryn Turnbull$^\star$, Christopher Nemeth, Matthew Nunes and Tyler McCormick} % please mark the name of the person(s) presenting the poster with a star
+% 
+\affiliations{STOR-i Centre for Doctoral Training, Lancaster University}
+%
+\contacts{k.turnbull@lancaster.ac.uk} % URL or email address of contact person
+%
+\vspace*{0.3cm}
+\end{center}
+
+%%%%%%%%%%   Type your abstract below
+The ubiquity of high-dimensional network data motivates the study of efficient inference schemes.  When considering network data, we note that high-dimensional may refer to the number of nodes, the number of observations in time, or both. Our focus is on temporally evolving networks where we may utilise a state space modelling approach, hence providing a natural framework for the application of Sequential Monte Carlo methods. In particular, we consider a latent space network model whereby nodes are assumed to lie in a latent space and that the probability of a connection between two nodes is proportional to their similarity in this space. However, to avoid applying SMC to a high-dimensional and highly-dependent state space, we propose an inference scheme on the pairwise connection probabilities. Furthermore, we note that these methods can be extended to weighted edges and are amenable to online updating.
+
+%%%%%%%%%%%   References
+%If you have references, you can produce a .bbl file using bibtex
+%and copy/paste thebibliography here
+\begin{thebibliography}{1}	
+
+        \bibitem{Hoff}
+          Peter Hoff, Adrian Raftery, and Mark Handcock,
+          \emph{Latent Space Approaches to Social Network Analysis},
+          JASA,
+          Volume 97, Issue 460,
+          2002.
+
+        \bibitem{Sewell}
+          Daniel Sewell and Yuguo Chen,
+          \emph{Latent Space Models for Dynamic Networks},
+          JASA,
+          Volume 110, Issue 512,
+          2015.
+
+        \bibitem{Doucet}
+          Christophe Andrieu, Arnaud Doucet and Roman Holenstein,
+          \emph{Particle Markov chain Monte Carlo methods},
+          JRSS: Series B,
+          Volume 72,\\ Issue 3,
+          2010.
+
+        \bibitem{Durante}
+          Daniele Durante and David Dunson,
+          \emph{Nonparametric Bayes dynamic modelling of relational data},
+          Biometrika,
+          Volume 101, Issue 4,
+          2014.
+	
+\end{thebibliography}
+
+
+\end{document}

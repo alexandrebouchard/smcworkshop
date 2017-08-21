@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{url}
+\newcommand{\postertitle}[1]{{\Large\bf #1}\\[12pt]}
+\newcommand{\authors}[1]{\emph{#1}\\}
+\newcommand{\affiliations}[1]{{#1}\\}
+\newcommand{\contacts}[1]{{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\vspace*{0.5cm}
+%
+\postertitle{Multi-dipole estimation from (simultaneous) MEG and EEG data: a semi-analytic
+Sequential Monte Carlo approach.}
+%
+\authors{Sara Sommariva$^{\star, 1}$ and Gianvittorio Luria$^2$ and Alberto Sorrentino$^2$} % please mark the name of the person(s) presenting the poster with a star
+% 
+\affiliations{1.Department of Neuroscience and Biomedical Engineering, Aalto University \\
+2.Department of Mathematics, Universit\`a di Genova}
+%
+\contacts{\url{sara.sommariva@aalto.fi}} % URL or email address of contact person
+%
+\vspace*{0.3cm}
+\end{center}
+
+%%%%%%%%%%   Type your abstract below
+From a macroscopic point of view, any brain function is characterized by the activation and
+interaction of specific brain areas.\\
+Magnetoencephalography (MEG) and Electroencephalography (EEG) are two modern
+neuroimaging techniques featuring an outstanding temporal resolution which makes them
+particularly suitable to study such functional networks. To this aim, MEG/EEG data are
+typically analyzed in two steps. First, the neural currents that have generated the recorded
+data are estimated (\textit{source reconstruction}); then, the statistical relationship between 
+the activity of the involved brain areas is computed (\textit{functional connectivity analysis}).\\
+
+\noindent
+In \cite{soso14} and \cite{soetal14} we have shown how the Sequential Monte Carlo (SMC) approach introduced in
+\cite{DelMoetal06} can be used to perform the first step of the process, namely source reconstruction.
+We modelled neural sources as the superimposition of an unknown number of point-like
+sources, termed dipoles, each one representing the activity of a small brain area. Both the
+number and the locations of the dipoles are assumed to remain fixed in time, while their
+moments, i.e. their intensities and orientations, are allowed to change.
+Under these hypothesis both the MEG and EEG forward problems can be written in terms of
+a conditionally linear model. Indeed, data depend linearly on the dipole moments, while
+depend non-linearly on their number and locations. Assuming a Gaussian prior for the linear
+variables and for the noise probability distribution, we used the SMC approach to
+approximate the posterior distribution of the number of sources and their locations while we
+computed analytically the conditional posterior of the time-varying dipole moments.
+Moreover, in \cite{roetal17} we have shown how, setting properly the noise covariance matrix, the
+presented algorithm can be used for the joint analysis of MEG and EEG data, resulting in a
+lower variance of the posterior distribution and thus in a lower uncertainty on the solution.
+Our next goal is to study the application of this algorithm for connectivity analysis, i.e. for
+recovering the dynamic interaction between the different active dipoles together with their
+time-courses.
+
+
+%%%%%%%%%%%   References
+%If you have references, you can produce a .bbl file using bibtex
+%and copy/paste thebibliography here
+\begin{thebibliography}{1}	
+	\bibitem{soso14}
+	S.~Sommariva and A.~Sorrentino 
+	\newblock Sequential Monte Carlo samplers for semi-linear inverse problems and application to Magnetoencephalography 
+	\newblock {\em Inverse Problems}, 30 114020, 2014.
+	\bibitem{soetal14}
+	A.~Sorrentino, G.~Luria and R.~Aramini  
+	\newblock Bayesian Multi-Dipole Modeling of a Single Topography in MEG by Adaptive Sequential Monte Carlo Samplers 
+	\newblock {\em Inverse Problems}, 30 045010, 2014
+	\bibitem{DelMoetal06}
+	P.~Del Moral, A.~Doucet and A.~Jasra  
+	\newblock Sequential Monte Carlo samplers 
+	\newblock {\em Journal Of The Royal Statistical Society Series B}, 68 41--36, 2006
+	\bibitem{roetal17}
+	F.~Rossi, G.~Luria, S.~Sommariva and A.~Sorrentino   
+	\newblock Bayesian multi-dipole localization and uncertainty quantification from simultaneous EEG and MEG recordings 
+	\newblock {\em EMBEC 2017, IFMBE Proceedings}, 65, 2017 
+\end{thebibliography}
+
+
+\end{document}

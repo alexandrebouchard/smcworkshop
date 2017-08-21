@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{url}
+\newcommand{\postertitle}[1]{{\Large\bf #1}\\[12pt]}
+\newcommand{\authors}[1]{\emph{#1}\\}
+\newcommand{\affiliations}[1]{{#1}\\}
+\newcommand{\contacts}[1]{{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\vspace*{0.5cm}
+%
+\postertitle{Bayesian Phylogenetics using Particle Gibbs}
+%
+\authors{Liangliang Wang$^\star$ and Shijia Wang} % please mark the name of the person(s) presenting the poster with a star
+% 
+\affiliations{Department of Statistics and Actuarial Science, Simon Fraser University, Canada}
+%
+\contacts{\url{http://people.stat.sfu.ca/~lwa68}} % URL or email address of contact person
+%
+\vspace*{0.3cm}
+\end{center}
+
+%%%%%%%%%%   Type your abstract below
+Bayesian phylogenetics, which approximates a posterior distribution of phylogenetic trees, has become more and more popular with the development of Monte Carlo methods. Standard Bayesian estimation of phylogenetic trees can handle rich evolutionary models but requires expensive Markov chain Monte Carlo (MCMC) simulations, which may suffer from two difficulties, the curse of dimensionality and the local-trap problem. Our previous work  \cite{Wang2015} has shown that the combinatorial sequential Monte Carlo (CSMC) method can serve as a good alternative to MCMC in posterior inference over phylogenetic trees. However, the simple proposal distribution used in CSMC is inefficient to combine with MCMC in the framework of the particle Gibbs sampler. Moreover, CSMC is inapplicable to the particle Gibbs with ancestor sampling \cite{Lindsten2014}. In this poster, we will present a more efficient CSMC method, called CSMC-BF,  with a more flexible proposal. The proposed CSMC-BF can improve the performance of the particle Gibbs sampler compared with the original CSMC, and can be used in the particle Gibbs with ancestor sampling.  We will demonstrate the advantages of the proposed CSMC-BF using simulation studies and real data analysis. 
+
+
+
+%%%%%%%%%%%   References
+%If you have references, you can produce a .bbl file using bibtex
+%and copy/paste thebibliography here
+\begin{thebibliography}{1}	
+	\bibitem{Wang2015}
+	Liangliang Wang, Alexandre Bouchard-C\^{o}t\'{e}, and Arnaud Doucet.
+	\newblock Bayesian phylogenetic inference using a combinatorial sequential Monte Carlo method.
+	\newblock {\em Journal of the American Statistical Association}, 110(512):1362D1374, 2015.	
+	
+	\bibitem{Lindsten2014}
+	Fredrik Lindsten, Michael I. Jordan, and Thomas B. Sch\"on
+	\newblock Particle Gibbs with ancestor sampling.
+	\newblock {\em Journal of Machine Learning Research}, 15(1):2145D2184, 2014.	
+\end{thebibliography}
+
+
+\end{document}

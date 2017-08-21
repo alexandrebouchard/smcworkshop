@@ -1,0 +1,122 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{inputenc}
+\inputencoding{utf8}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{url}
+\newcommand{\postertitle}[1]{\addcontentsline{toc}{subsection}{#1}{\Large\bf #1}\\[12pt]}
+\newcommand{\authors}[1]{\emph{#1}\\}
+\newcommand{\affiliations}[1]{{#1}\\}
+\newcommand{\contacts}[1]{{#1}}
+\usepackage{graphicx}
+\usepackage{array}
+
+
+\newenvironment{absolutelynopagebreak}
+  {\par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup}
+  {\par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd}
+
+
+
+\usepackage{standalone}
+
+\begin{document}
+
+\begin{center}
+  \phantom{Invisible}
+  \vspace{2cm}
+	{\huge\bfseries Sequential Monte Carlo Workshop\par}
+	\vspace{2cm} 
+\includegraphics[width=0.8\textwidth]{@{files}/raindrops_ipw.jpg}
+\\
+	\vspace{2cm}
+{\scshape\Large August 30 -- September 1, Uppsala\par}
+\end{center}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Program}
+
+\noindent The title of each talk links to its abstract.
+
+@foreach{entry : parseCSV()} 
+
+@if{!entry.get("day").isEmpty()}
+@if{!entry.get("day").contains("Wed")}
+\newpage
+@end{}
+\subsection{@{entry.get("day")}}
+@end{}
+
+@if{!entry.get("event").isEmpty()}
+\subsubsection*{@{entry.get("time")} @{entry.get("event")}}
+@if{!entry.get("chair").isEmpty()}
+\noindent Session chair: @{entry.get("chair")}
+\\
+@end{}
+@if{!entry.get("notes").isEmpty()}
+\noindent @{entry.get("notes")}
+\\
+@end{}
+@end{}
+
+@if{!entry.get("speaker").isEmpty()}
+\noindent\begin{tabular}{l p{15cm}}
+@{entry.get("time")} &  
+@if{!entry.get("title").contains("TBD")} \hyperlink{@{entry.get("speaker").split(" ")[entry.get("speaker").split(" ").length-1]}}{@{entry.get("title")}} @else{} @{entry.get("title")} @end{}
+ \\ & \emph{@{entry.get("speaker")}, @{entry.get("affiliation")}} 
+\end{tabular}
+@end{}
+
+@end{}
+
+\newpage
+\section{Talk abstracts}
+
+@foreach{entry : parseCSV()} 
+
+@if{!entry.get("speaker").isEmpty() && !entry.get("title").contains("TBD")}
+
+\begin{absolutelynopagebreak}
+\begin{center}
+\vspace*{0.5cm}
+%
+\hypertarget{@{entry.get("speaker").split(" ")[entry.get("speaker").split(" ").length-1]}}{}
+\postertitle{@{entry.get("title")}} 
+%
+\authors{@{entry.get("speaker")}}
+% 
+\affiliations{@{entry.get("affiliation")}}
+%
+\vspace*{0.3cm}
+\end{center}
+
+
+\input{@{files}/abstracts_talks/@{entry.get("speaker").split(" ")[entry.get("speaker").split(" ").length-1]}.tex}
+\end{absolutelynopagebreak}
+
+
+
+@end{}
+@end{}
+
+\newpage
+\section{Poster abstracts}
+
+@foreach{file : abstracts_posters}
+
+\pagebreak[3]
+\input{@{file.getAbsolutePath()}}
+\pagebreak[3]
+
+@end{}
+
+\end{document}

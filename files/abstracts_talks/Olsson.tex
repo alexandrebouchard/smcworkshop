@@ -1,0 +1,18 @@
+This talk discusses variance estimation in sequential Monte Carlo
+methods, alternatively termed particle filters. The variance estimator
+that we propose is a natural modification of that suggested by H.P.
+Chan and T.L. Lai [A general theory of particle filters in hidden
+Markov models and some applications. Ann. Statist., 41(6):
+2877--2904, 2013], which allows the variance to be estimated in a
+single run of the particle filter by tracing the genealogical history of
+the particles. However, due particle lineage degeneracy, the estimator
+of the mentioned work becomes numerically unstable as the number
+of sequential particle updates increases. Thus, by tracing only a part
+of the particles' genealogy rather than the full one, our estimator
+gains long-term numerical stability at the cost of a bias. The scope of
+the genealogical tracing is regulated by a lag, and under mild, easily
+checked model assumptions, we prove that the bias tends to zero
+geometrically fast as the lag increases. As confirmed by our
+numerical results, this allows the bias to be tightly controlled also for
+moderate particle sample sizes.
+This is a joint work with Randal Douc, TELECOM SudParis.

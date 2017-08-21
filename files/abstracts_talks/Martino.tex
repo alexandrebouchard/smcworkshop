@@ -1,0 +1,10 @@
+Gaussian particle filters replace the resampling process of traditional
+particle filters by the computation of Gaussians, which are then used
+for drawing auxiliary particles that serve as parents for the particles
+generated in the next time step. Gaussian particle filters have some
+advantages over standard particle filters including in hardware
+implementation and in treating constant parameters. In this paper,
+we present a few novel implementations of Gaussian particle filters,
+and show how they relate to each other. We compare their
+performance in stressful settings where the dimension of the state
+vector and number of static parameters of the model are high.

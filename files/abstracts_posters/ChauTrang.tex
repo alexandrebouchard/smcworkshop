@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{url}
+\newcommand{\postertitle}[1]{{\Large\bf #1}\\[12pt]}
+\newcommand{\authors}[1]{\emph{#1}\\}
+\newcommand{\affiliations}[1]{{#1}\\}
+\newcommand{\contacts}[1]{{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\vspace*{0.5cm}
+%
+\postertitle{Reconstruction and estimation for non-parametric state-space models}
+%
+\authors{Thi Tuyet Trang CHAU $^\star$, Pierre AILLIOT and Valeri\'e MONBET} % please mark the name of the person(s) presenting the poster with a star
+% 
+\affiliations{IRMAR, University of Rennes 1}
+%
+\contacts{Email: thi-tuyet-trang.chau@univ-rennes1.fr} % URL or email address of contact person
+%
+\vspace*{0.3cm}
+\end{center}
+
+%%%%%%%%%%   Type your abstract below
+Missing data are present in many environmental data-sets and this work aims at developing a general method for imputing them. State-space models (SSM) have already extensively been used in this framework. The basic idea consists in introducing the true environmental process, which we aim at reconstructing, as a latent process and model the data available at neighboring sites in space and/or time conditionally to this latent process.
+    A key input of SSMs is a stochastic model which describes the temporal evolution of the environmental process of interest. In many applications, the dynamic is complex and can hardly be described using a tractable parametric model. Here we investigate a data-driven method where the dynamical model is learned using a non-parametric approach and historical observations of the environmental process of interest.
+    From a statistical point of view, we will address various aspects related to SSMs in a non-parametric framework. First we will discuss the estimation of the filtering and smoothing distributions, that is the distribution of the latent space given the observations, using sequential Monte Carlo approaches in conjunction with local linear regression. Then, a more difficult and original question consists in building a non-parametric estimate of the dynamics which takes into account the measurement errors which are present in historical data. We will propose an EM-like algorithm where the historical data are corrected recursively.
+    The methodology will be illustrated and validated on an univariate toy example.
+
+%
+%%%%%%%%%%%%   References
+%%If you have references, you can produce a .bbl file using bibtex
+%%and copy/paste thebibliography here
+%\begin{thebibliography}{1}	
+%	\bibitem{label}
+%	A.~Anderson 
+%	\newblock Novel theory for methods
+%	\newblock {\em Journal of Theory and Methods}, 1(2):1--12, 2017.	
+%\end{thebibliography}
+
+
+\end{document}

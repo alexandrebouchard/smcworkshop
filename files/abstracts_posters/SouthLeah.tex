@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{url}
+\newcommand{\postertitle}[1]{{\Large\bf #1}\\[12pt]}
+\newcommand{\authors}[1]{\emph{#1}\\}
+\newcommand{\affiliations}[1]{{#1}\\}
+\newcommand{\contacts}[1]{{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\vspace*{0.5cm}
+%
+\postertitle{Sequential Monte Carlo for Static Bayesian Models with Independent MCMC Proposals}
+%
+\authors{L. F. South$^\star$, A. N. Pettitt \& C. C. Drovandi} % please mark the name of the person(s) presenting the poster with a star
+% 
+\affiliations{School of Mathematical Sciences, Queensland University of Technology, Australia\\ ARC Centre of Excellence for Mathematical \& Statistical Frontiers (ACEMS)}
+%
+\contacts{\url{leah.south@hdr.qut.edu.au}} % URL or email address of contact person
+%
+\vspace*{0.3cm}
+\end{center}
+
+%%%%%%%%%%   Type your abstract below
+Sequential Monte Carlo (SMC) represents a powerful alternative to Markov chain Monte Carlo (MCMC) for sampling from the posterior distribution of static Bayesian models. Under likelihood annealing SMC, an easy to sample from distribution is connected with the target through a sequence of reweighting, resample and move steps. The move step is typically the most computationally expensive step and can have an impact on the accuracy of evidence estimates and posterior expectation estimates. A common choice in the literature is to use several iterations of an MCMC kernel formed using the population of particles. However, the proposals made throughout the sequence of distributions are essentially wasted because only the final accepted particles target the posterior distribution. We propose to take further advantage of the population of particles by forming an independent proposal based on a copula model. As a by-product of the independent proposal choice, we are able to perform posterior inference using all proposals generated in the SMC process and we are able to consider a novel importance sampling based estimator of the marginal likelihood. We demonstrate that our approach can lead to more efficient posterior approximations and more precise estimates of the evidence compared with the multivariate normal random walk proposal.
+
+
+%%%%%%%%%%%   References
+%If you have references, you can produce a .bbl file using bibtex
+%and copy/paste thebibliography here
+\begin{thebibliography}{1}	
+%	\bibitem{label}
+%	A.~Anderson 
+%	\newblock Novel theory for methods
+%	\newblock {\em Journal of Theory and Methods}, 1(2):1--12, 2017.
+
+
+\bibitem{South2017}
+South LF, Pettitt AN, Drovandi CC (2017) Sequential {M}onte {C}arlo for static
+  {B}ayesian models with independent {MCMC} proposals.
+  \url{http://eprints.qut.edu.au/101729/}
+
+\bibitem{Gramacy2010}
+Gramacy R, Samworth R, King R (2010) Importance tempering. Statistics and
+  Computing 20(1):1--7
+
+\bibitem{Nguyen2014}
+Nguyen TLT, Septier F, Peters GW, Delignon Y (2014) Improving {SMC} sampler
+  estimate by recycling all past simulated particles. In: 2014 IEEE Workshop.
+  In Statistical Signal Processing (SSP), pp p117--120
+
+\bibitem{Chopin2002}
+Chopin N (2002) A sequential particle filter method for static models.
+  Biometrika 89(3):539--552
+
+\bibitem{Tran2014}
+Tran MN, Giordani P, Mun X, Kohn R, Pitt MK (2014) Copula-type estimators for
+  flexible multivariate density modeling using mixtures. Journal of
+  Computational and Graphical Statistics 23(4):1163--1178
+
+\bibitem{Cornuet2012}
+Cornuet JM, Marin JM, Mira A, Robert CP (2012) Adaptive multiple importance
+  sampling. Scandinavian Journal of Statistics 39(4):798--812
+      	
+\end{thebibliography}
+
+
+\end{document}

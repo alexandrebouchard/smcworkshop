@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{url}
+\newcommand{\postertitle}[1]{{\Large\bf #1}\\[12pt]}
+\newcommand{\authors}[1]{\emph{#1}\\}
+\newcommand{\affiliations}[1]{{#1}\\}
+\newcommand{\contacts}[1]{{#1}}
+
+%\def\thebibliography#1{\list
+%  {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
+%    \advance\leftmargin\labelsep\usecounter{enumi}}}
+
+\begin{filecontents}{bibliography.bib}
+
+@article{whiteley2016role,
+  title={On the role of interaction in sequential Monte Carlo algorithms},
+  author={Whiteley, Nick and Lee, Anthony and Heine, Kari},
+  journal={Bernoulli},
+  volume={22},
+  number={1},
+  pages={494--529},
+  year={2016},
+  publisher={Bernoulli Society for Mathematical Statistics and Probability}
+}
+
+@article{lubotzky1988ramanujan,
+  title={Ramanujan graphs},
+  author={Lubotzky, Alexander and Phillips, Ralph and Sarnak, Peter},
+  journal={Combinatorica},
+  volume={8},
+  number={3},
+  pages={261--277},
+  year={1988},
+  publisher={Springer}
+}
+
+\end{filecontents}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\vspace*{0.5cm}
+%
+\postertitle{Communication Efficient Sequential Monte Carlo}
+%
+\authors{Deborshee Sen$^\star$ and Alexandre H Thiery} % please mark the name of the person(s) presenting the poster with a star
+% 
+\affiliations{Department of Statistics and Applied Probability, National University of Singapore}
+%
+\contacts{\url{deborshee.sen@u.nus.edu}} % URL or email address of contact person
+%
+\vspace*{0.3cm}
+\end{center}
+
+
+Distributed algorithms have become increasingly significant in recent years propelled by fast technological developments in parallel computing. 
+For sequential Monte Carlo methods, the re-sampling step remains the main difficulty in attempting to parallelize them. We consider a recent algorithm, the so-called $\alpha$SMC, which is an attempt at this. Interactions between particles in this algorithm are controlled by a sequence of ``$\alpha$'' matrices. Our goal is to minimize interactions while still leading to stable algorithms.
+We prove that under standard assumptions the stability properties of the algorithm can be ensured by choosing well-connected, yet sparse, graphs. In particular, choosing \emph{Ramanujan graphs} lead to stable-in-time algorithms; and more generally, so do expander graphs. 
+We next prove a central limit theorem when interactions are randomly chosen and we also prove that the asymptotic normalized variance of the filtering estimates produced by the $\alpha$SMC with random interactions is stable as long as there is a certain minimum level of interaction. 
+An offshoot of this is that the $\alpha$SMC algorithm with random interaction is asymptotically equivalent to the bootstrap particle filter as long as the level of interaction increases to infinity with the number of particles, even if it is at a very slow rate.
+
+
+%%%%%%%%%%   References
+
+
+\bibliographystyle{plain}
+\bibliography{bibliography}
+
+
+
+
+\end{document}
