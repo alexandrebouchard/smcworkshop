@@ -12,7 +12,7 @@
 \newcommand{\contacts}[1]{{#1}}
 \usepackage{graphicx}
 \usepackage{array}
-
+\usepackage{standalone}
 
 \newenvironment{absolutelynopagebreak}
   {\par\nobreak\vfil\penalty0\vfilneg
@@ -22,8 +22,6 @@
 
 
 
-\usepackage{standalone}
-
 \begin{document}
 
 \begin{center}
@@ -31,10 +29,10 @@
   \vspace{2cm}
 	{\huge\bfseries Sequential Monte Carlo Workshop\par}
 	\vspace{2cm} 
-\includegraphics[width=0.8\textwidth]{@{files}/raindrops_ipw.jpg}
-\\
+  \includegraphics[width=0.8\textwidth]{@{files}/raindrops_ipw.jpg}
+  \\
 	\vspace{2cm}
-{\scshape\Large August 30 -- September 1, Uppsala\par}
+  {\scshape\Large August 30 -- September 1, Uppsala\par}
 \end{center}
 
 \newpage
@@ -49,13 +47,13 @@
 
 @foreach{entry : parseCSV()} 
 
+% Write the day
 @if{!entry.get("day").isEmpty()}
-@if{!entry.get("day").contains("Wed")}
-\newpage
-@end{}
+@if{!entry.get("day").contains("Wed")}\newpage@end{}
 \subsection{@{entry.get("day")}}
 @end{}
 
+% Write an event
 @if{!entry.get("event").isEmpty()}
 \subsubsection*{@{entry.get("time")} @{entry.get("event")}}
 @if{!entry.get("chair").isEmpty()}
@@ -66,12 +64,14 @@
 \noindent @{entry.get("notes")}
 \\
 @end{}
+
 @end{}
 
+% Write a talk
 @if{!entry.get("speaker").isEmpty()}
 \noindent\begin{tabular}{l p{15cm}}
 @{entry.get("time")} &  
-@if{!entry.get("title").contains("TBD")} \hyperlink{@{entry.get("speaker").split(" ")[entry.get("speaker").split(" ").length-1]}}{@{entry.get("title")}} @else{} @{entry.get("title")} @end{}
+@if{!entry.get("title").contains("TBD")} \hyperlink{@{authorKey(entry)}}{@{entry.get("title")}} @else{} @{entry.get("title")} @end{}
  \\ & \emph{@{entry.get("speaker")}, @{entry.get("affiliation")}} 
 \end{tabular}
 @end{}
@@ -79,17 +79,16 @@
 @end{}
 
 \newpage
+
 \section{Talk abstracts}
 
 @foreach{entry : parseCSV()} 
-
 @if{!entry.get("speaker").isEmpty() && !entry.get("title").contains("TBD")}
-
 \begin{absolutelynopagebreak}
 \begin{center}
 \vspace*{0.5cm}
 %
-\hypertarget{@{entry.get("speaker").split(" ")[entry.get("speaker").split(" ").length-1]}}{}
+\hypertarget{@{authorKey(entry)}}{}
 \postertitle{@{entry.get("title")}} 
 %
 \authors{@{entry.get("speaker")}}
@@ -99,11 +98,8 @@
 \vspace*{0.3cm}
 \end{center}
 
-
-\input{@{files}/abstracts_talks/@{entry.get("speaker").split(" ")[entry.get("speaker").split(" ").length-1]}.tex}
+\input{@{files}/abstracts_talks/@{authorKey(entry)}.tex}
 \end{absolutelynopagebreak}
-
-
 
 @end{}
 @end{}

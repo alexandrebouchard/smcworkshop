@@ -1,7 +1,6 @@
 package smcworkshop;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -12,7 +11,6 @@ import com.google.common.collect.FluentIterable;
 import binc.Command;
 import briefj.BriefIO;
 import briefj.opt.Option;
-import briefj.run.Commands;
 import briefj.run.Mains;
 import briefj.run.Results;
 
@@ -40,6 +38,13 @@ public class SimpleTemplate implements Runnable
       pdflatexOut = Command.byName("pdflatex").withArgs(texFile.getName()).ranIn(texFile.getParentFile()).callWithInputStreamContents("x\nx\nx\nx\nx\nx\n");
     System.out.println("Latex output (last run)\n" + pdflatexOut);
     Command.call(Command.byPath(new File("/usr/bin/open")).withArgs(Results.getFileInResultFolder(outFile.replaceAll("tex$", "pdf")).getAbsolutePath()));
+  }
+  
+  public String authorKey(Map<String, String> line)
+  {
+    String fullName = line.get("speaker");
+    String [] names = fullName.split("\\s+"); 
+    return names[names.length - 1];
   }
   
   public FluentIterable<Map<String,String>> parseCSV() 
