@@ -6,3 +6,4 @@ bin/
 .DS_Store
 results
 build
+.~lock.program_data.csv#
