@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{url}
+\newcommand{\postertitle}[1]{{\Large\bf #1}\\[12pt]}
+\newcommand{\authors}[1]{\emph{#1}\\}
+\newcommand{\affiliations}[1]{{#1}\\}
+\newcommand{\contacts}[1]{{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\vspace*{0.5cm}
+%
+\postertitle{Upper and lower bounds on kernel density estimates in particle filtering}
+%
+\authors{David Coufal$^\star$} % please mark the name of the person(s) presenting the poster with a star
+% 
+\affiliations{
+Charles University in Prague, Faculty of Mathematics and Physics\\
+Department of Probability and Mathematical Statistics\\
+Sokolovsk\'{a} 83, 186 75 Praha 8, Czech Republic
+}
+%
+\contacts{e-mail: coufal@karlin.mff.cuni.cz} % URL or email address of contact person
+%
+\vspace*{0.3cm}
+\end{center}
+
+%%%%%%%%%%   Type your abstract below
+The upper bounds on kernel density estimates in particle filtering are derived for the Sobolev class of filtering densities. 
+The bounds assure the convergence of kernel density estimates to the filtering density at each filtering time, provided 
+the number of generated particles goes to infinity. The result is achieved by means of Fourier analysis. 
+The lower bounds are discussed as well. They are delivered using the standard approach from non-parameteric
+estimation that employs tools from information theory. The lower bounds meet upper ones, which indicates
+optimality of the kernel density estimates in particle filtering.
+%%%%%%%%%%%   References
+%If you have references, you can produce a .bbl file using bibtex
+%and copy/paste thebibliography here
+\begin{thebibliography}{1}	
+	\bibitem{Coufal2016}
+	D.~Coufal
+	\newblock On convergence of kernel density estimates in particle filtering. 
+	\newblock {\em Kybernetika}, 5(52):735--756, 2016.\\
+	\newblock \texttt{http://www.kybernetika.cz/content/2016/5/735}
+\end{thebibliography}
+
+
+\end{document}

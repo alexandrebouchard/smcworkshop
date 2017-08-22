@@ -1,1 +1,3 @@
-TBD
+Most vehicle navigation systems rely on GPS positioning. With support from odometry and inertial sensors, this is a sufficiently accurate and robust solution, but there are future demands. Autonomous cars require higher accuracy and integrity. In GPS-denied environments (parking houses, tunnels, urban canyons) other solutions must be applied.
+
+We present a localization application based on a prior that vehicles spend most time on the road, with odometer as the primary input. The map information is included in a Bayesian setting using the particle filter, rather than standard map matching. In extensive experiments the performance without GPS is shown to have basically the same quality as utilizing a GPS sensor. An indoor vehicle multi-level positioning algorithm is proposed that makes use of an indoor map, as well as dead-reckoning sensor information that is available in every car.
