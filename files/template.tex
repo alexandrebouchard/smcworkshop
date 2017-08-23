@@ -40,7 +40,7 @@
 
 \section{Acknowledgments} 
 
-The SMC2017 workshop is finanicially supported by:
+The SMC2017 workshop is financially supported by:
 
 \begin{itemize}
 \item The Centre for Interdisciplinary Mathematics (CIM) at Uppsala University
@@ -66,11 +66,13 @@ The front page photo is taken by Lawrence Murray.
 
 \section{Program}
 
+Click on the title to jump to the corresponding abstract.
+
 @foreach{entry : parseCSV()} 
 
 % Write the day
 @if{!entry.get("day").isEmpty()}
-@if{!entry.get("day").contains("Wed")}\newpage@end{}
+@if{!entry.get("day").contains("Wed") && !entry.get("day").contains("Tue")}\newpage@end{}
 \subsection{@{entry.get("day")}}
 @end{}
 
