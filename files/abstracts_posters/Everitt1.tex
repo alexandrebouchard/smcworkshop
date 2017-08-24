@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{url}
+\newcommand{\postertitle}[1]{{\Large\bf #1}\\[12pt]}
+\newcommand{\authors}[1]{\emph{#1}\\}
+\newcommand{\affiliations}[1]{{#1}\\}
+\newcommand{\contacts}[1]{{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\vspace*{0.5cm}
+%
+\postertitle{Delayed acceptance ABC-SMC}
+%
+\authors{Richard Everitt} % please mark the name of the person(s) presenting the poster with a star
+%
+\vspace*{0.3cm}
+\end{center}
+
+Approximate Bayesian computation (ABC) is now an established technique for statistical inference in the form of a simulator, and approximates the likelihood at a parameter $\theta$ by simulating auxiliary data sets x and evaluating the distance of x from the true data y. However, ABC is not computationally feasible in cases where using the simulator for each $\theta$ is very expensive. This paper investigates this situation in cases where a cheap, but approximate, simulator is available. The approach is to employ delayed acceptance Markov chain Monte Carlo (MCMC) within an ABC sequential Monte Carlo (SMC) sampler in order to, in a first stage of the kernel, use the cheap simulator to rule out parts of the parameter space that are not worth exploring, so that the ``true'' simulator is only run (in the second stage of the kernel) where there is a high chance of accepting proposed values of $\theta$. We show that this approach can be used quite automatically, with the only tuning parameter choice additional to ABC-SMC being the number of particles we wish to carry through to the second stage of the kernel. Applications to stochastic differential equation models and latent doubly intractable distributions are presented.
+
+This is joint work with Paulina Rowinska, and is available at arxiv.org/abs/1708.02230
+
+
+
+\end{document}

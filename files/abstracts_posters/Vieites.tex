@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{url}
+\newcommand{\postertitle}[1]{{\Large\bf #1}\\[12pt]}
+\newcommand{\authors}[1]{\emph{#1}\\}
+\newcommand{\affiliations}[1]{{#1}\\}
+\newcommand{\contacts}[1]{{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\vspace*{0.5cm}
+%
+\postertitle{A probabilistic scheme for joint parameter estimation and state 
+prediction in complex dynamical systems}
+%
+\authors{Sara Vieites} % please mark the name of the person(s) presenting the poster with a star
+% 
+\vspace*{0.3cm}
+\end{center}
+
+Many problems in the geophysical sciences demand the ability 
+to calibrate the parameters and predict the time evolution of complex 
+dynamical models using sequentially-collected data. Here we introduce a 
+general methodology for the joint estimation of the static parameters 
+and the forecasting of the state variables of nonlinear, and possibly 
+chaotic, dynamical models. The proposed scheme is essentially 
+probabilistic. It aims at recursively computing the sequence of joint 
+posterior probability distributions of the unknown model parameters and 
+its (time varying) state variables conditional on the available 
+observations. The latter are possibly partial and contaminated by noise. 
+The new framework combines a Monte Carlo scheme to approximate the 
+posterior distribution of the  fixed parameters with fi ltering (or data 
+assimilation) techniques to track and predict the distribution of the 
+state variables. For this reason, we refer to the proposed methodology 
+as nested  filtering. In this paper we speci cally explore the use of 
+Gaussian  filtering methods, but other approaches fi t naturally within 
+the new framework. As an illustrative example, we apply three different 
+implementations of the methodology to the tracking of the state, and the 
+estimation of the fi xed parameters, of a stochastic two-scale Lorenz 96 
+system. This model is commonly used to assess data assimilation 
+procedures in meteorology. For this example, we compare different nested 
+fi lters and show estimation and forecasting results for a 
+4,000-dimensional system.
+
+
+
+\end{document}

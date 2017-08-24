@@ -1,0 +1,27 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{url}
+\newcommand{\postertitle}[1]{{\Large\bf #1}\\[12pt]}
+\newcommand{\authors}[1]{\emph{#1}\\}
+\newcommand{\affiliations}[1]{{#1}\\}
+\newcommand{\contacts}[1]{{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\vspace*{0.5cm}
+%
+\postertitle{Online Bayesian Inference for High Dimensional Dynamic Spatio-Temporal Models}
+%
+\authors{Sofia Karadimitriou Sofia} % please mark the name of the person(s) presenting the poster with a star
+%
+\vspace*{0.3cm}
+\end{center}
+
+Spatio-temporal processes are geographically represented, i.e. in space, either by being a point, a field or a map and also they vary in time. We would like to make inference on the spatial and temporal change of certain phenomena which for instance could be the air pollution increasing or decreasing in time and ranging in a city or a country. In this era high dimensional datasets can be available, where measurements are observed daily or even hourly at more than one hundred weather stations or locations along with many predictors. Therefore, what we would like to infer is high dimensional and the analysis is difficult to come through due to high complexity of calculations or efficiency from a computational aspect.The first reduced dimension Dynamic Spatio Temporal Model (DSTM) was introduced by Wikle and Cressie (1999) to jointly describe the spatial and temporal evolution of a function observed subject to noise. A basic state space model is adopted for the discrete temporal variation, while a continuous autoregressive structure describes the continuous spatial evolution.Application of Wikle and Cressie’s DTSM relies upon the pre-selection of a suit- able reduced set of basis functions and this can present a challenge in practice. In this poster we propose an online estimation method for high dimensional spatio-temporal data based upon DTSM on a spatio temporal count process which attempts to resolve this issue allowing the basis to adapt to the observed data. Specifically, we present a wavelet decomposition for the spatial evolution but where one would typically expect parsimony. This believed parsimony can be achieved by placing a Spike and Slab prior distribution on the wavelet coefficients. The aim of using the Spike and Slab prior, is to filter wavelet coefficients with low contribution, and thus achieve the dimension reduction with significant computation savings.We then propose a Hierarchical Bayesian State Space model, for the estimation of which we offer an appropriate Forward Filtering Backward Sampling algorithm under particle filtering for general state space models which includes static parameter estimation and Gibbs sampling steps for the Spike and Slab wavelet coefficients.
+
+
+
+\end{document}

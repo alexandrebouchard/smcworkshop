@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{url}
+\newcommand{\postertitle}[1]{{\Large\bf #1}\\[12pt]}
+\newcommand{\authors}[1]{\emph{#1}\\}
+\newcommand{\affiliations}[1]{{#1}\\}
+\newcommand{\contacts}[1]{{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\vspace*{0.5cm}
+%
+\postertitle{Marginal sequential Monte Carlo for doubly intractable models}
+%
+\authors{Richard Everitt} % please mark the name of the person(s) presenting the poster with a star
+%
+\vspace*{0.3cm}
+\end{center}
+
+Bayesian inference for models that have an intractable partition function is known as a doubly intractable problem, where standard Monte Carlo methods are not applicable. The past decade has seen the development of auxiliary variable Monte Carlo techniques for tackling this problem; these approaches being members of the more general class of pseudo-marginal, or exact-approximate, Monte Carlo algorithms, which make use of unbiased estimates of intractable posteriors. Everitt (2017) (https://arxiv.org/abs/1504.00298) investigated the use of exact-approximate importance sampling (IS) and sequential Monte Carlo (SMC) in doubly intractable problems, but focussed only on SMC algorithms that used data-point tempering. This paper describes SMC samplers that may use alternative sequences of distributions, and describes ways in which likelihood estimates may be improved adaptively as the algorithm progresses, building on ideas from Moores (2015) (arxiv.org/abs/1403.4359) and Stoehr et al. (2017) (arxiv.org/abs/1706.10096).
+
+This is joint work with Dennis Prangle, Philip Maybank and Mark Bell.
+
+
+
+\end{document}
