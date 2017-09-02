@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{url}
+\newcommand{\postertitle}[1]{{\Large\bf #1}\\[12pt]}
+\newcommand{\authors}[1]{\emph{#1}\\}
+\newcommand{\affiliations}[1]{{#1}\\}
+\newcommand{\contacts}[1]{{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\vspace*{0.5cm}
+%
+\postertitle{A guided intermediate resampling particle filter for inference on high dimensional systems}
+%
+\authors{Joonha Park$^\star$ and Edward L. Ionides} % please mark the name of the person(s) presenting the poster with a star
+% 
+\affiliations{Department of Statistics, University of Michigan}
+%
+\contacts{\texttt{joonhap@umich.edu}} % URL or email address of contact person
+%
+\vspace*{0.3cm}
+\end{center}
+
+%%%%%%%%%%   Type your abstract below
+Sequential Monte Carlo (SMC) methods, also known as the particle filter methods, have formed the basis of many inference methods on nonlinear partially observed Markov process (POMP) models. However, the performance of the particle filter deteriorates as the dimension of the state space increases \cite{bengtsson2008curse}. This curse of dimensionality has been a limiting factor in inference using multidimensional nonlinear models. We present a novel particle filter, which we call a guided intermediate resampling filter (GIRF), that scales well to moderately high dimensions. This method is readily applicable to a broad range of models thanks to its plug-and-play property, which means that the user only needs to be able to simulate the process, while its transition density need not be evaluated. Our theoretical and experimental results indicate that this method scales much better than standard methods. We analyzed spatiotemporal epidemic data with a complex mechanistic model using our GIRF method, combining it with the iterated filtering approach for maximum likelihood estimation \cite{ionides2015inference}. The new particle filter enabled likelihood based inference on the coupling between the measles epidemics in twenty cities in England and Wales in the mid-twentieth century.
+
+%%%%%%%%%%%   References
+%If you have references, you can produce a .bbl file using bibtex
+%and copy/paste thebibliography here
+
+\begin{thebibliography}{2}
+\bibitem[Bengtsson et~al.(2008)]{bengtsson2008curse}
+Thomas Bengtsson, Peter Bickel, and Bo~Li.
+\newblock Curse-of-dimensionality revisited: collapse of the particle filter in
+  very large scale systems.
+\newblock In \emph{Probability and Statistics: Essays in Honor of David A.
+  Freedman}, pages 316--334. Institute of Mathematical Statistics, 2008.
+
+\bibitem[Ionides et~al.(2015)]{ionides2015inference}
+Edward~L Ionides, Dao Nguyen, Yves Atchad{\'e}, Stilian Stoev, and Aaron~A
+  King.
+\newblock Inference for dynamic and latent variable models via iterated,
+  perturbed {B}ayes maps.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 112\penalty0
+  (3):\penalty0 719--724, 2015.
+
+\end{thebibliography}
+
+
+\end{document}
